@@ -1,0 +1,43 @@
+name: Deploy Expo App
+
+
+on:
+  push:
+    branches:
+      - main 
+      - test-ci-cd 
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 
+
+      - name: Setup Expo and EAS CLI
+        uses: expo/expo-github-action@v8
+        with:
+          expo-version: latest
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+     
+      - name: Install dependencies
+        run: npm install
+
+
+      - name: Build application
+        run: eas build --platform all --non-interactive --profile production
+
+     
+      # - name: Submit to stores
+      #   run: eas submit --platform all --latest --non-interactive
