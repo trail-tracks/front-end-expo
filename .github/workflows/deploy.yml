@@ -34,8 +34,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Initialize application
+        run: eas init
 
-      - name: Build application
+
+
+      - name: Build appli   cation
         run: eas build --platform all --non-interactive --profile production
 
      
