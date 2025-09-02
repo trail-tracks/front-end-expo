@@ -33,7 +33,6 @@ jobs:
       - name: Publish update
         run: eas update --auto --non-interactive
   build:
-    if: github.ref == 'refs/heads/main'
     name: Build Expo App
     runs-on: ubuntu-latest
     steps:
