@@ -3,16 +3,20 @@ import { StyleSheet, Text, View } from 'react-native';
 import "./global.css"
 import LogoApp from '../components/LogoApp';
 import Button from '../components/Button';
+import SearchBar from '../components/SearchBar';
 
 export default function App() {
   return (
     <View className="flex-1 items-center justify-center">
       <Text className="text-xl font-bold text-forestGreen-400">
-        Welcome to Nativewind!
+        Welcome to Nativewind
       </Text>
       <LogoApp/>
 
-      <Button label='iniciar' buttonType='green'/>
+      <Button buttonType='primary'>
+        Click Me
+      </Button>
+      <SearchBar/>
     </View>
   );
 }
