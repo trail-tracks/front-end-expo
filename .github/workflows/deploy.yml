@@ -1,10 +1,7 @@
 name: Deploy Expo
 
 on:
-  push:
-    branches:
-      - main
-      - test-ci-cd
+  workflow_dispatch:
 
 jobs:
   publish-update:
