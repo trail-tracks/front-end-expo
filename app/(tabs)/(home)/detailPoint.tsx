@@ -13,10 +13,9 @@ import {
   FlatList,
   Image,
   ImageBackground,
-  Platform,
   ScrollView,
   Text,
-  View,
+  View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
@@ -73,7 +72,7 @@ function detailPoint() {
     
 
   return (
-    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['bottom']}>
+    <SafeAreaView className="flex-1" edges={["bottom"]}>
       <ScrollView>
         <ImageBackground
           style={{ height: "auto", width: "auto" }}
@@ -81,7 +80,7 @@ function detailPoint() {
           resizeMode="cover"
         >
           <View className="mx-16 py-6 pb-72">
-            <View className="flex-row gap-4 items-center justify-center mt-4">
+            <View className="flex-row gap-4 items-center justify-center mt-10">
               <ReturnButton buttonType="secondary" />
 
               <View className="bg-white items-center py-1 justify-between pl-6 gap-4 pr-2 rounded-3xl flex-row overflow-hidden">

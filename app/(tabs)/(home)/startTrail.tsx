@@ -21,7 +21,7 @@ function startTrail() {
 
   if (!currentTrail) {
     return (
-      <SafeAreaView className="flex-1 justify-center items-center" edges={Platform.OS === 'ios' ? ['top']: ['top', 'bottom']}>
+      <SafeAreaView className="flex-1 justify-center items-center" edges={Platform.OS === 'ios' ? ['bottom']: ['top', 'bottom']}>
         <Text>Você não está em nenhuma trilha no momento.</Text>
       </SafeAreaView>
     );
@@ -29,7 +29,7 @@ function startTrail() {
   
 
   return (
-    <SafeAreaView className="flex-1" edges={Platform.OS === 'ios' ? ['top']: ['bottom']}>
+    <SafeAreaView className="flex-1" edges={["bottom"]}>
         <FlatList
           ListHeaderComponent={<View className="mb-10"><TrailHeader name={currentTrail.name} imgSrc={getImageUrl(currentTrail.coverUrl) || ""} parkImage={currentTrail.parkImage}/></View>}
           data={currentTrail.landmarks}
