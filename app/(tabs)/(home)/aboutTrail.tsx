@@ -5,7 +5,7 @@ import { getImageUrl } from "@/lib/api";
 import { TrailProps } from "@/types/Trail";
 import Foundation from "@expo/vector-icons/Foundation";
 import { router, useLocalSearchParams } from "expo-router";
-import { Platform, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { WebView } from "react-native-webview";
 
@@ -26,7 +26,7 @@ function aboutTrail() {
   return (
     <SafeAreaView
       className="flex-1"
-      edges={Platform.OS === "android" ? ["bottom"] : ["top"]}
+      edges={["bottom"]}
     >
       <TrailHeader
         name={trailData.name}

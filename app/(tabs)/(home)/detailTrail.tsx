@@ -14,14 +14,16 @@ import React, { useEffect, useState } from "react";
 import {
   FlatList,
   Image,
-  Platform,
   ScrollView,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
+import { StatusBar } from 'expo-status-bar';
+
+
+import { SafeAreaView } from "react-native-safe-area-context";
 function detailTrail() {
   const { trailId, parkImage, entityId } = useLocalSearchParams<{
     trailId: string;
@@ -67,8 +69,10 @@ function detailTrail() {
   return (
     <SafeAreaView
       className="flex-1"
-      edges={Platform.OS === "android" ? ["bottom"] : ["top"]}
+      edges={["bottom"]}
     >
+
+      <StatusBar style="auto" />
       <ScrollView>
         <TrailHeader
           name={trail?.name}
