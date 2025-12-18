@@ -122,7 +122,7 @@ function detailPoint() {
         </View>
         <View className="bg-white flex-row p-6 items-center gap-4">
           <Foundation name="info" size={24} color="#113D31" />
-          <Text className="font-bold text-forestGreen-500">Sobre a Trilha</Text>
+          <Text className="font-bold text-forestGreen-500">Sobre o Ponto</Text>
         </View>
         <View className="bg-white h-96 w-full">
           <WebView
